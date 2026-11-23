@@ -7,6 +7,7 @@ import subprocess
 from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
+BRIDGE_PATH = "skills/codex-claude-bridge"
 PACKAGES = {
     "codex": ("", ".agents/skills/claude-code-bridge"),
     "claude": (".claude/", ".claude/skills/codex-app-bridge"),
@@ -23,10 +24,12 @@ def main():
     args = parser.parse_args()
     commit = git("rev-parse", "--verify", "--end-of-options", f"{args.ref}^{{commit}}").decode().strip()
     license_text = git("show", f"{commit}:LICENSE")
+    # Release v0.1.0 stores its package trees at the repository root.
+    source_root = f"{BRIDGE_PATH}/" if git("ls-tree", commit, "--", BRIDGE_PATH) else ""
     dist = ROOT / "dist"
     dist.mkdir(exist_ok=True)
     for host, (prefix, skill) in PACKAGES.items():
-        contents = git("archive", "--format=zip", f"{commit}:{host}")
+        contents = git("archive", "--format=zip", f"{commit}:{source_root}{host}")
         with ZipFile(BytesIO(contents)) as source:
             files = [entry for entry in source.infolist() if not entry.is_dir()]
             names = {prefix + entry.filename for entry in files}

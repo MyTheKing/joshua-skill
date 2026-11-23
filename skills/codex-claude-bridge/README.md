@@ -1,5 +1,7 @@
 # Codex ↔ Claude Code 联动
 
+**简体中文** · [English](README.en.md)
+
 [返回 Skill 总目录](../../README.md)
 
 当前版本 [v0.1.0](https://github.com/MyTheKing/joshua-skill/releases/tag/v0.1.0)
@@ -24,6 +26,8 @@
 2. 打开项目，新建会话，输入上面的 Skill 命令，再说你想交给对方做什么。比如 `/codex-app-bridge 请让 Codex 帮我看一下这次改动有没有遗漏`。
 
 本机装好 Python 3.10+，并登录 Codex CLI 和 Claude Code 后，Skill 会在调用时启动对方的 CLI。个人目录安装和可选的桌面自启动见[安装说明](docs/install.md)。
+
+我会根据实际项目中的使用反馈持续优化这组 Skill，重点打磨安装、任务交接和结果回传。欢迎分享你用它解决的问题，或告诉我哪里还不顺手。[GitHub Issues](https://github.com/MyTheKing/joshua-skill/issues)
 
 ## 源码与打包
 

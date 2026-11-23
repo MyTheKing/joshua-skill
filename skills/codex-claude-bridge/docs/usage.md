@@ -1,5 +1,7 @@
 # 双向联动用法
 
+**简体中文** · [English](usage.en.md)
+
 [返回目录](../README.md#目录) · [安装](install.md) · [常见问题](troubleshooting.md)
 
 ## Codex → Claude Code

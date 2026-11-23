@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claude Code Bridge"
+  short_description: "Delegate Claude tasks, track status, and resume sessions"
+  default_prompt: "Use $claude-code-bridge to delegate a bounded task to Claude Code, follow its progress, and verify its result."

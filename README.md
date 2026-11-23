@@ -1,11 +1,9 @@
 # Joshua Skill
 
-一组可以随项目分发的协作技能。首版让 **Codex 和 Claude Code 双向委派**，在同一个项目里互相做代码审查、方案复核，或按授权接手具体改动。
+Joshua Skill 是一个开源 Skill 仓库。第一组 Skill 让 **Codex 和 Claude Code 在同一个项目里互相派任务、取回结果**。比如让一个 Agent 改代码，再请另一个 Agent 检查。
 
-| 从哪里发起 | 交给谁 | 项目安装包 | 启动方式 |
-| --- | --- | --- | --- |
-| Codex | Claude Code | [codex-skill.zip](https://github.com/MyTheKing/joshua-skill/releases/latest/download/codex-skill.zip) | `$claude-code-bridge` |
-| Claude Code | Codex | [claude-skill.zip](https://github.com/MyTheKing/joshua-skill/releases/latest/download/claude-skill.zip) | `/codex-app-bridge` |
+- **Codex → Claude Code**。在 Codex 中调用 `$claude-code-bridge`，让 Claude Code 读代码、做审查或按授权改文件，还可以接着追问。[下载 Codex Skill](https://github.com/MyTheKing/joshua-skill/releases/latest/download/codex-skill.zip)
+- **Claude Code → Codex**。在 Claude Code 中调用 `/codex-app-bridge`，让 Codex 读项目、查问题或按授权改文件，结果会回到 Claude Code。[下载 Claude Code Skill](https://github.com/MyTheKing/joshua-skill/releases/latest/download/claude-skill.zip)
 
 ## 目录
 
@@ -18,20 +16,10 @@
 
 ## 快速开始
 
-使用 macOS 或 Linux，安装 Python 3.10+、Codex CLI 和 Claude Code，再按各自官方流程登录。要用两个方向，就把两份 ZIP 都解压到**同一个项目的根目录**。只用一个方向时，下载对应发起端的 ZIP 即可。两个包都会保留隐藏目录结构。
+1. 下载上面的 ZIP，解压到同一个项目的根目录。Codex Skill 放到 `.agents/skills/`，Claude Code Skill 放到 `.claude/skills/`。ZIP 已经带好目录。
+2. 打开项目，新建会话，输入上面的 Skill 命令，再说你想交给对方做什么。比如 `/codex-app-bridge 请让 Codex 帮我看一下这次改动有没有遗漏`。
 
-```sh
-cd /path/to/your/project
-unzip /path/to/codex-skill.zip
-unzip /path/to/claude-skill.zip
-```
-
-从项目根目录打开 Codex 或 Claude Code，新建会话后试试下面任意一条。
-
-- 在 Codex 里输入 `$claude-code-bridge 请让 Claude Code 复核 README 的安装步骤，只给建议。`
-- 在 Claude Code 里输入 `/codex-app-bridge 让 Codex 复核 README 的安装步骤，只给建议。`
-
-两个方向默认按只读任务运行，使用接收端已有的本地登录。安装包包含运行脚本，项目导入不需要额外注册 MCP。首次使用时，宿主可能要求你信任项目或允许执行本地脚本。参见官方技能目录说明。[Codex Skills](https://learn.chatgpt.com/docs/build-skills) · [Claude Code Skills](https://code.claude.com/docs/en/skills)
+本机装好 Python 3.10+，并登录 Codex CLI 和 Claude Code 后，Skill 会在调用时启动对方的 CLI。个人目录安装和可选的桌面自启动见[安装说明](docs/install.md)。
 
 ## 源码与打包
 

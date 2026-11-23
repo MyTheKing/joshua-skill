@@ -1,5 +1,7 @@
 # Joshua Skill
 
+当前版本 [v0.1.0](https://github.com/MyTheKing/joshua-skill/releases/tag/v0.1.0)
+
 Joshua Skill 是一个开源 Skill 仓库。第一组 Skill 让 **Codex 和 Claude Code 在同一个项目里互相派任务、取回结果**。比如让一个 Agent 改代码，再请另一个 Agent 检查。
 
 - **Codex → Claude Code**。在 Codex 中调用 `$claude-code-bridge`，让 Claude Code 读代码、做审查或按授权改文件，还可以接着追问。[下载 Codex Skill](https://github.com/MyTheKing/joshua-skill/releases/latest/download/codex-skill.zip)
@@ -20,6 +22,8 @@ Joshua Skill 是一个开源 Skill 仓库。第一组 Skill 让 **Codex 和 Clau
 2. 打开项目，新建会话，输入上面的 Skill 命令，再说你想交给对方做什么。比如 `/codex-app-bridge 请让 Codex 帮我看一下这次改动有没有遗漏`。
 
 本机装好 Python 3.10+，并登录 Codex CLI 和 Claude Code 后，Skill 会在调用时启动对方的 CLI。个人目录安装和可选的桌面自启动见[安装说明](docs/install.md)。
+
+如果这组 Skill 帮到了你，欢迎点一下仓库右上角的 ⭐ Star，给项目一点支持。
 
 ## 源码与打包
 

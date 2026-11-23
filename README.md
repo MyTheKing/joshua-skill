@@ -1,4 +1,4 @@
-# My Skill
+# Joshua Skill
 
 一组可以随项目分发的协作技能。首版让 **Codex 和 Claude Code 双向委派**，在同一个项目里互相做代码审查、方案复核，或按授权接手具体改动。
 

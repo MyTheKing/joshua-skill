@@ -27,7 +27,7 @@
 
 本机装好 Python 3.10+，并登录 Codex CLI 和 Claude Code 后，Skill 会在调用时启动对方的 CLI。个人目录安装和可选的桌面自启动见[安装说明](docs/install.md)。
 
-我会根据实际项目中的使用反馈持续优化这组 Skill，重点打磨安装、任务交接和结果回传。欢迎分享你用它解决的问题，或告诉我哪里还不顺手。[GitHub Issues](https://github.com/MyTheKing/joshua-skill/issues)
+我会根据实际使用反馈持续优化这组 Skill。欢迎分享你的使用体验。[GitHub Issues](https://github.com/MyTheKing/joshua-skill/issues)
 
 ## 源码与打包
 

@@ -27,7 +27,7 @@ These skills let **Codex and Claude Code hand off tasks and retrieve results in 
 
 Install Python 3.10+ on your machine and sign in to the Codex and Claude Code CLIs. Each skill starts the other CLI when invoked. The [installation guide](docs/install.en.md) also covers personal installations and optional desktop startup.
 
-I'll keep improving these skills based on how they work in real projects, with a focus on setup, task handoffs, and getting results back. I'd love to hear what you use them for and where you get stuck. [GitHub Issues](https://github.com/MyTheKing/joshua-skill/issues)
+I'll keep improving these skills based on feedback from real projects. I'd love to hear how you use them. [GitHub Issues](https://github.com/MyTheKing/joshua-skill/issues)
 
 ## Source and packaging
 

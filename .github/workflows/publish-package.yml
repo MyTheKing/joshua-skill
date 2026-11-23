@@ -1,0 +1,42 @@
+name: Publish skill package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror the latest release ZIPs to GitHub Packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          tag=$(gh release view --repo "$GITHUB_REPOSITORY" --json tagName --jq '.tagName')
+          if [[ ! "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            printf 'Expected a release tag like v0.1.0, got %s\n' "$tag" >&2
+            exit 1
+          fi
+          image="ghcr.io/${GITHUB_REPOSITORY,,}:$tag"
+          stage=$(mktemp -d "$RUNNER_TEMP/joshua-package.XXXXXXXX")
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir "$stage" \
+            --pattern codex-skill.zip --pattern claude-skill.zip
+          unzip -tq "$stage/codex-skill.zip"
+          unzip -tq "$stage/claude-skill.zip"
+          sha256sum "$stage/codex-skill.zip" "$stage/claude-skill.zip"
+
+          docker login ghcr.io --username "$GITHUB_ACTOR" --password-stdin <<< "$GH_TOKEN"
+          docker build --tag "$image" --file - \
+            --label "org.opencontainers.image.source=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+            --label "org.opencontainers.image.version=$tag" \
+            --label 'org.opencontainers.image.description=Codex and Claude Code skill ZIP downloads' \
+            --label 'org.opencontainers.image.licenses=MIT' \
+            "$stage" <<'DOCKERFILE'
+          FROM scratch
+          COPY codex-skill.zip claude-skill.zip /skills/
+          DOCKERFILE
+          docker push "$image"

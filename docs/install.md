@@ -10,7 +10,7 @@
 
 ## 从 ZIP 导入项目
 
-从 [GitHub Releases](https://github.com/MyTheKing/my-skill/releases/latest) 下载所需的包。把 ZIP 解压到项目根目录，让已有的隐藏目录和包里的目录合并。
+从 [GitHub Releases](https://github.com/MyTheKing/joshua-skill/releases/latest) 下载所需的包。把 ZIP 解压到项目根目录，让已有的隐藏目录和包里的目录合并。
 
 | 包 | 解压后的技能入口 |
 | --- | --- |
@@ -24,7 +24,7 @@
 也可从仓库复制完整的技能子目录。把下面两个变量换成自己的目录。
 
 ```sh
-repo=/path/to/my-skill
+repo=/path/to/joshua-skill
 project=/path/to/your/project
 mkdir -p "$project/.agents/skills" "$project/.claude/skills"
 cp -R "$repo/codex/.agents/skills/claude-code-bridge" "$project/.agents/skills/"

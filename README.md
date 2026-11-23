@@ -4,8 +4,8 @@
 
 | 从哪里发起 | 交给谁 | 项目安装包 | 启动方式 |
 | --- | --- | --- | --- |
-| Codex | Claude Code | [codex-skill.zip](https://github.com/MyTheKing/my-skill/releases/latest/download/codex-skill.zip) | `$claude-code-bridge` |
-| Claude Code | Codex | [claude-skill.zip](https://github.com/MyTheKing/my-skill/releases/latest/download/claude-skill.zip) | `/codex-app-bridge` |
+| Codex | Claude Code | [codex-skill.zip](https://github.com/MyTheKing/joshua-skill/releases/latest/download/codex-skill.zip) | `$claude-code-bridge` |
+| Claude Code | Codex | [claude-skill.zip](https://github.com/MyTheKing/joshua-skill/releases/latest/download/claude-skill.zip) | `/codex-app-bridge` |
 
 ## 目录
 

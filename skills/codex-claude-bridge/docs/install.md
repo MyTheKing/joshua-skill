@@ -1,5 +1,7 @@
 # 安装和升级
 
+**简体中文** · [English](install.en.md)
+
 [返回目录](../README.md#目录) · [用法](usage.md) · [常见问题](troubleshooting.md)
 
 ## 从 ZIP 导入项目

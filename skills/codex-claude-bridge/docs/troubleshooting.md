@@ -1,5 +1,7 @@
 # 常见问题
 
+**简体中文** · [English](troubleshooting.en.md)
+
 [返回目录](../README.md#目录) · [安装](install.md) · [用法](usage.md)
 
 | 情况 | 排查方法 |
